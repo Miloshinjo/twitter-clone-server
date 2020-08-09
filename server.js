@@ -24,6 +24,13 @@ app.post('/api/v1/users/login', (req, res, next) => {
   });
 });
 
+app.get('/api/v1/tweets', (req, res, next) => {
+  res.status(200).json({
+    status: 'success',
+    data: 'Tweeets',
+  });
+});
+
 // handle unknown requests
 app.all('*', (req, res, next) => {
   next(new Error(`Can't find ${req.originalUrl} on this server`, 404));
