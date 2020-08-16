@@ -32,14 +32,13 @@ app.post('/api/v1/users/login', (req, res, next) => {
     throw new Error('Invalid credentials', 400);
   }
 
+  if (!req.body.password !== user.password) {
+    throw new Error('Invalid credentials', 400);
+  }
+
   res.status(200).json({
     status: 'success',
-    token: jwt.sign(
-      {
-        id,
-      },
-      'mysecret'
-    ),
+    token: 'token',
     data: {
       id: user.id,
       email: user.email,
