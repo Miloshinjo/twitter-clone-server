@@ -3,6 +3,9 @@ const express = require('express');
 const cors = require('cors');
 const jwt = require('jsonwebtoken');
 
+const globalErrorHandler = require('./errorController');
+const AppError = require('./appError');
+
 const app = express();
 
 const users = JSON.parse(
@@ -23,22 +26,22 @@ app.use(cors());
 
 app.post('/api/v1/users/login', (req, res, next) => {
   if (!req.body.email || !req.body.password) {
-    throw new Error('No username or password', 400);
+    throw new AppError('No username or password', 400);
   }
 
   const user = users.find((user) => user.email === req.body.email);
 
   if (!user) {
-    throw new Error('Invalid credentials', 400);
+    throw new AppError('Invalid credentials', 400);
   }
 
-  if (!req.body.password !== user.password) {
-    throw new Error('Invalid credentials', 400);
+  if (req.body.password !== user.password) {
+    throw new AppError('Invalid credentials', 400);
   }
 
   res.status(200).json({
     status: 'success',
-    token: 'token',
+    token: jwt.sign({ id: user.id }, 'mysecret'),
     data: {
       id: user.id,
       email: user.email,
@@ -57,6 +60,9 @@ app.get('/api/v1/tweets', (req, res, next) => {
 app.all('*', (req, res, next) => {
   next(new Error(`Can't find ${req.originalUrl} on this server`, 404));
 });
+
+// Error handling middleware
+app.use(globalErrorHandler);
 
 const server = app.listen(8080, () => {
   console.log(`App running on port 8080...`);
