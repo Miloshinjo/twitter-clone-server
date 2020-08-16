@@ -12,8 +12,6 @@ const users = JSON.parse(
   fs.readFileSync(`${__dirname}/db/users.json`, 'utf-8')
 );
 
-console.log(users);
-
 process.on('uncaughtException', (err) => {
   console.log('UNCAUGHT EXCEPTION 💥 Shutting down...');
   console.log(err.name, err.message);
