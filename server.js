@@ -24,17 +24,17 @@ app.use(cors());
 
 app.post('/api/v1/users/login', (req, res, next) => {
   if (!req.body.email || !req.body.password) {
-    throw new AppError('No username or password', 400);
+    return next(new AppError('No username or password', 400));
   }
 
   const user = users.find((user) => user.email === req.body.email);
 
   if (!user) {
-    throw new AppError('Invalid credentials', 400);
+    return next(new AppError('Invalid credentials', 400));
   }
 
   if (req.body.password !== user.password) {
-    throw new AppError('Invalid credentials', 400);
+    return next(new AppError('Invalid credentials', 400));
   }
 
   res.status(200).json({
