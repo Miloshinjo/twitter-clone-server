@@ -1,7 +1,15 @@
+const fs = require('fs');
 const express = require('express');
 const cors = require('cors');
+const jwt = require('jsonwebtoken');
 
 const app = express();
+
+const users = JSON.parse(
+  fs.readFileSync(`${__dirname}/db/users.json`, 'utf-8')
+);
+
+console.log(users);
 
 process.on('uncaughtException', (err) => {
   console.log('UNCAUGHT EXCEPTION 💥 Shutting down...');
@@ -15,12 +23,27 @@ app.use(cors());
 
 app.post('/api/v1/users/login', (req, res, next) => {
   if (!req.body.email || !req.body.password) {
-    next(new Error('No username or password', 400));
+    throw new Error('No username or password', 400);
+  }
+
+  const user = users.find((user) => user.email === req.body.email);
+
+  if (!user) {
+    throw new Error('Invalid credentials', 400);
   }
 
   res.status(200).json({
     status: 'success',
-    data: 'Logged in',
+    token: jwt.sign(
+      {
+        id,
+      },
+      'mysecret'
+    ),
+    data: {
+      id: user.id,
+      email: user.email,
+    },
   });
 });
 
