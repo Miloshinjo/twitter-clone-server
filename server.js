@@ -12,6 +12,10 @@ const users = JSON.parse(
   fs.readFileSync(`${__dirname}/db/users.json`, 'utf-8')
 );
 
+const tweets = JSON.parse(
+  fs.readFileSync(`${__dirname}/db/tweets.json`, 'utf-8')
+);
+
 process.on('uncaughtException', (err) => {
   console.log('UNCAUGHT EXCEPTION 💥 Shutting down...');
   console.log(err.name, err.message);
@@ -50,7 +54,7 @@ app.post('/api/v1/users/login', (req, res, next) => {
 app.get('/api/v1/tweets', (req, res, next) => {
   res.status(200).json({
     status: 'success',
-    data: 'Tweeets',
+    data: tweets,
   });
 });
 

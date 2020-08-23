@@ -1,0 +1,44 @@
+[
+  {
+    "id": 11,
+    "author": 1,
+    "text": "Hey, Friday is the best day!",
+    "likes": []
+  },
+  {
+    "id": 12,
+    "author": 2,
+    "text": "Did a lot of React today, it is awesome!",
+    "likes": []
+  },
+  {
+    "id": 13,
+    "author": 3,
+    "text": "Did anyone watch the Nuggets yesterday?",
+    "likes": []
+  },
+  {
+    "id": 14,
+    "author": 2,
+    "text": "How do React Hooks work?",
+    "likes": []
+  },
+  {
+    "id": 15,
+    "author": 1,
+    "text": "Anyone used Redux?",
+    "likes": [2]
+  },
+  {
+    "id": 16,
+    "author": 2,
+    "text": "I am Michael Jordan and I like dunking on people. My favorite dunk was on Mutombo.",
+    "likes": [1, 3]
+  },
+  {
+    "id": 17,
+    "author": 3,
+    "text": "Any movies to recommend?",
+    "likes": []
+  }
+]

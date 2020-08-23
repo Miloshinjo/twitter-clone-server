@@ -3,6 +3,21 @@
     "id": 1,
     "username": "bojan",
     "email": "bojan@example.com",
-    "password": "password"
+    "password": "password",
+    "handle": "@bojanzerajic"
+  },
+  {
+    "id": 2,
+    "username": "andy",
+    "email": "andy@example.com",
+    "password": "password",
+    "handle": "@terminator"
+  },
+  {
+    "id": 3,
+    "username": "mike",
+    "email": "mike@example.com",
+    "password": "password",
+    "handle": "@pwd32"
   }
 ]
