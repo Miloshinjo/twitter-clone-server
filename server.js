@@ -58,6 +58,23 @@ app.get('/api/v1/tweets', (req, res, next) => {
   });
 });
 
+app.get('/api/v1/tweets/:id', (req, res, next) => {
+  if (!req.body.id) {
+    return next(new AppError('Missing the tweet id', 400));
+  }
+
+  const tweet = tweets.find((tweet) => tweet.id === req.body.id);
+
+  if (!tweet) {
+    return next(new AppError('Such tweet doesnt exist', 400));
+  }
+
+  res.status(200).json({
+    status: 'success',
+    data: tweet,
+  });
+});
+
 // handle unknown requests
 app.all('*', (req, res, next) => {
   next(new Error(`Can't find ${req.originalUrl} on this server`, 404));
