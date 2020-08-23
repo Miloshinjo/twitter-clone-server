@@ -59,11 +59,15 @@ app.get('/api/v1/tweets', (req, res, next) => {
 });
 
 app.get('/api/v1/tweets/:id', (req, res, next) => {
-  if (!req.body.id) {
+  console.log(req.params.id);
+
+  if (!req.params.id) {
     return next(new AppError('Missing the tweet id', 400));
   }
 
-  const tweet = tweets.find((tweet) => tweet.id === req.body.id);
+  const tweet = tweets.find(
+    (tweet) => tweet.id === parseInt(req.params.id, 10)
+  );
 
   if (!tweet) {
     return next(new AppError('Such tweet doesnt exist', 400));
