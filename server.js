@@ -59,8 +59,6 @@ app.get('/api/v1/tweets', (req, res, next) => {
 });
 
 app.get('/api/v1/tweets/:id', (req, res, next) => {
-  console.log(req.params.id);
-
   if (!req.params.id) {
     return next(new AppError('Missing the tweet id', 400));
   }
