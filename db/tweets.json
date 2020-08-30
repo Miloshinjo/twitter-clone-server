@@ -4,7 +4,8 @@
     "author": {
       "id": 1,
       "handle": "@bojanzerajic",
-      "username": "bojan"
+      "username": "bojan",
+      "avatarUrl": "https://avatars.dicebear.com/api/male/bojan.svg"
     },
     "text": "Hey, Friday is the best day!",
     "likes": []
@@ -14,7 +15,8 @@
     "author": {
       "id": 2,
       "handle": "@terminator",
-      "username": "andy"
+      "username": "andy",
+      "avatarUrl": "https://avatars.dicebear.com/api/male/any.svg"
     },
     "text": "Did a lot of React today, it is awesome!",
     "likes": []
@@ -24,7 +26,8 @@
     "author": {
       "id": 3,
       "handle": "@pwd32",
-      "username": "mike"
+      "username": "mike",
+      "avatarUrl": "https://avatars.dicebear.com/api/human/jordan.svg"
     },
     "text": "Did anyone watch the Nuggets yesterday?",
     "likes": []
@@ -34,7 +37,8 @@
     "author": {
       "id": 2,
       "handle": "@terminator",
-      "username": "andy"
+      "username": "andy",
+      "avatarUrl": "https://avatars.dicebear.com/api/male/any.svg"
     },
     "text": "How do React Hooks work?",
     "likes": []
@@ -44,7 +48,8 @@
     "author": {
       "id": 2,
       "handle": "@terminator",
-      "username": "andy"
+      "username": "andy",
+      "avatarUrl": "https://avatars.dicebear.com/api/male/any.svg"
     },
     "text": "Anyone used Redux?",
     "likes": [2]
@@ -54,7 +59,8 @@
     "author": {
       "id": 2,
       "handle": "@terminator",
-      "username": "andy"
+      "username": "andy",
+      "avatarUrl": "https://avatars.dicebear.com/api/male/any.svg"
     },
     "text": "I am Michael Jordan and I like dunking on people. My favorite dunk was on Mutombo.",
     "likes": [1, 3]
@@ -64,7 +70,8 @@
     "author": {
       "id": 3,
       "handle": "@pwd32",
-      "username": "mike"
+      "username": "mike",
+      "avatarUrl": "https://avatars.dicebear.com/api/human/jordan.svg"
     },
     "text": "Any movies to recommend?",
     "likes": []

@@ -4,20 +4,23 @@
     "username": "bojan",
     "email": "bojan@example.com",
     "password": "password",
-    "handle": "@bojanzerajic"
+    "handle": "@bojanzerajic",
+    "avatarUrl": "https://avatars.dicebear.com/api/male/bojan.svg"
   },
   {
     "id": 2,
     "username": "andy",
     "email": "andy@example.com",
     "password": "password",
-    "handle": "@terminator"
+    "handle": "@terminator",
+    "avatarUrl": "https://avatars.dicebear.com/api/male/any.svg"
   },
   {
     "id": 3,
     "username": "mike",
     "email": "mike@example.com",
     "password": "password",
-    "handle": "@pwd32"
+    "handle": "@pwd32",
+    "avatarUrl": "https://avatars.dicebear.com/api/human/jordan.svg"
   }
 ]
